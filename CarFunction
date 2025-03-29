@@ -1,0 +1,61 @@
+void drvNDbrk(){    //直走煞車右
+  getDistance();
+  printDistance();
+  if (Distance<30){Forward(128,93);
+    if(Distance<20){Forward(80,53);
+      if(Distance<10){carStop();delay(1000);turnLeft(80,53);delay(400);}}}
+   if (Distance>30){Forward(180,140);}
+}
+void follow(){ //跟車
+  getDistance();
+  printDistance();
+  if (Distance<30){Forward(98+Distance,63+Distance);
+    if(Distance<20){Forward(60+Distance,33+Distance);
+      if(Distance<10){carStop();}}}
+  if (Distance>30){Forward(140+Distance,100+Distance);}
+}
+void DRVndBRK(){    //直走煞車左
+  Getdistance();
+  Printdistance();
+  if (distance<30){Forward(128,93);
+    if(distance<20){Forward(80,53);
+      if(distance<10){carStop();delay(1000);turnLeft(80,53);delay(400);}}}
+   if (Distance>30){Forward(180,140);}
+}
+void mazeClear(){  //解迷宮
+  Getdistance();getDistance();
+  //Printdistance();printDistance();
+  if(Distance<5){turnLeft(Lv,Rv);}
+  if(distance<5){turnRight(Lv,Rv);}
+  //if(distance<5 and Distance<5){Backward(Lv,Rv);} 
+  //if(distance>15 and Distance>15){Forward(Lv,Rv);}
+}
+
+void trackMOVE(){   //不碰黑色的追跡模式
+  senseIR();
+  if (IRLSTATE==1 and IRRSTATE==1){Forward(80,55);delay(150);carStop();}
+  if (IRRSTATE==1 and IRLSTATE==0){turnLeft(80,55);delay(100);carStop();}
+  if (IRRSTATE==0 and IRLSTATE==1){turnRight(80,55);delay(100);carStop();}
+  if (IRLSTATE==0 and IRRSTATE==0){carStop();}
+  
+  
+
+}
+void trackmove(){   //不碰白色的追跡模式
+  senseIR();
+  if (IRLSTATE==1 and IRRSTATE==1){Forward(Lv,Rv);}
+  if (IRRSTATE==0 and IRLSTATE==1){turnLeft(Lv,Rv);}
+  if (IRRSTATE==1 and IRLSTATE==0){turnRight(Lv,Rv);}
+  if (IRLSTATE==0 and IRRSTATE==0){carStop();}
+  
+}
+void trackMove(){   //不碰黑色無限模式
+  senseIR();
+  if (IRLSTATE==1 and IRRSTATE==1){Forward(Lv,Rv);}
+  if (IRRSTATE==1 and IRLSTATE==0){turnLeft(Lv,Rv);}
+  if (IRRSTATE==0 and IRLSTATE==1){turnRight(Lv,Rv);}
+  if (IRLSTATE==0 and IRRSTATE==0){carStop();}
+  
+  
+
+}
