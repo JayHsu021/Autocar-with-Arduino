@@ -1,0 +1,21 @@
+void getDistance(){
+  digitalWrite(Trig,HIGH);delay(5);digitalWrite(Trig,LOW);  //發信號
+  Echotime =pulseIn(Echo,HIGH); //算時間
+  Distance=v*(Echotime/2);
+//大寫右，小寫左
+  
+}
+void printDistance(){
+Serial.print("D= ");Serial.print(Distance);Serial.print(" cm");
+  
+}
+void Getdistance(){
+  digitalWrite(trig,HIGH);delay(5);digitalWrite(trig,LOW);  //發信號
+  echotime =pulseIn(echo,HIGH); //算時間
+  distance=v*(echotime/2);
+
+}
+void Printdistance(){
+Serial.print("D= ");Serial.print(distance);Serial.print(" cm");
+  
+}
