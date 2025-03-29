@@ -1,0 +1,25 @@
+void testButton(){
+  Dabble.processInput();
+  if(GamePad.isUpPressed()){Serial.println("Up");delay(50);}
+  if(GamePad.isLeftPressed()){Serial.println("Left");delay(50);}
+  if(GamePad.isDownPressed()){Serial.println("Down");delay(50);}
+  if(GamePad.isRightPressed()){Serial.println("Right");delay(50);}
+}
+void control(){
+  Dabble.processInput();
+  if(GamePad.isUpPressed()){Forward(Lv,Rv);delay(50);carStop();}
+  if(GamePad.isLeftPressed()){turnLeft(Lv,Rv);delay(50);carStop();}
+  if(GamePad.isDownPressed()){Backward(Lv,Rv);delay(50);carStop();}
+  if(GamePad.isRightPressed()){turnRight(Lv,Rv);delay(50);carStop();}
+  
+  if(GamePad.isTrianglePressed()){trsd=1;delay(50);}
+  if(GamePad.isCirclePressed()){trir=1;delay(50);}
+  if(GamePad.isCrossPressed()){trir=0;trsd=0;carStop();delay(50);}
+  if(trir==1){trackMove();}
+  if(trsd==1){trackmove();}
+  
+  if(GamePad.isStartPressed()){Lv=180;Rv=130;delay(50);}
+  if(GamePad.isSelectPressed()){Lv=128;Rv=93;delay(50);}
+  if(GamePad.isSquarePressed()){Lv=80;Rv=55;delay(50);}
+  
+}
