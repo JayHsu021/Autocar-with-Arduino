@@ -1,0 +1,6 @@
+void senseIR(){
+IRLSTATE=digitalRead(IRL); //讀取
+IRRSTATE=digitalRead(IRR);  delay(1);
+Serial.print("IRL= ");Serial.print(IRLSTATE);
+Serial.print("IRR= ");Serial.print(IRRSTATE);
+}
