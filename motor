@@ -1,0 +1,39 @@
+void Forward(int Lv,int Rv){
+analogWrite(motorLF,Lv);
+analogWrite(motorLB,0);
+analogWrite(motorRF,Rv);
+analogWrite(motorRB,0);
+}
+void Backward(int Lv,int Rv){
+analogWrite(motorLF,0);
+analogWrite(motorLB,Lv);
+analogWrite(motorRF,0);
+analogWrite(motorRB,Rv);
+}
+void turnLeft(int Lv,int Rv){
+analogWrite(motorLF,0);
+analogWrite(motorLB,Lv);
+analogWrite(motorRF,Rv);
+analogWrite(motorRB,0);
+}
+void turnRight(int Lv,int Rv){//400=90o
+analogWrite(motorLF,Lv);
+analogWrite(motorLB,0);
+analogWrite(motorRF,0);
+analogWrite(motorRB,Rv);
+}
+void carStop(){
+analogWrite(motorLF,0);
+analogWrite(motorLB,0);
+analogWrite(motorRF,0);
+analogWrite(motorRB,0);
+}
+//void prep(){
+//  pinMode(motorLF,OUTPUT);
+//  pinMode(motorLB,OUTPUT);
+//  pinMode(motorRF,OUTPUT);
+//  pinMode(motorRB,OUTPUT);
+//  carStop();
+//  Serial.begin(9600);//開啟Serial
+//  pinMode(Trig,OUTPUT);pinMode(Echo,INPUT);
+//}
