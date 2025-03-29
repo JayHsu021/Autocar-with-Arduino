@@ -1,0 +1,24 @@
+#include<Dabble.h>
+  int Trig =8;int Echo=7;float Distance;float T=22.0;float Echotime;
+  float v =(331+0.6*T)*100/1000000; //單位:cm/us
+  int Lv =80;int Rv =53;int trig =12;int echo =11;float distance;float echotime;
+  int motorLF=6;int motorLB=5;int motorRF=9;int motorRB=10;
+  int IRL =A1;int IRR =A0;
+  int IRLSTATE;int IRRSTATE;
+  int trir =0;int trsd =0;
+void setup() {
+  pinMode(motorLF,OUTPUT);
+  pinMode(motorLB,OUTPUT);
+  pinMode(motorRF,OUTPUT);
+  pinMode(motorRB,OUTPUT);
+  carStop();
+  Serial.begin(9600);//開啟Serial
+  pinMode(Trig,OUTPUT);pinMode(Echo,INPUT);
+  pinMode(trig,OUTPUT);pinMode(echo,INPUT);
+  pinMode(IRL,INPUT);pinMode(IRR,INPUT);//可省略
+  Dabble.begin(9600);
+}
+void loop() {
+  control();
+
+}
